@@ -70,7 +70,7 @@ public class Traffic_Light {
     }
     @Override
     public String toString(){
-        return "Traffic_Light[id="+id+
+        return "Traffic Light[id="+id+
                 ",Location is"+location+
                 ",status is"+status+
                 ",Duration="+duration+"seconds";
