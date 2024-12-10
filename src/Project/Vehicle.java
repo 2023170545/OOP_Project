@@ -52,4 +52,5 @@ public class Vehicle {
     public String toString(){
         return "Vehicle ID: "+id+"\n"+"Type: "+type+"\n"+"license Plate: "+LicensePlate+"\n"+"Owner: "+owner;
     }
+
 }
