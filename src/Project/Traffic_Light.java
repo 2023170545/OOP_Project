@@ -38,7 +38,11 @@ public class Traffic_Light {
     }
 
     public void setGreenDuration(int greenDuration) {
-        this.greenDuration = greenDuration;
+        if(greenDuration>=60){
+            this.greenDuration=greenDUration;
+        }
+        else
+            throw new IllegalArgumentException("Duration must be 1 minute or more");
     }
 
     public int getYellowDuration() {
@@ -46,7 +50,11 @@ public class Traffic_Light {
     }
 
     public void setYellowDuration(int yellowDuration) {
-        this.yellowDuration = yellowDuration;
+        if(yellowDuration>=10&&yellowDuration<=30){
+            this.yellowDuration=yellowDuration;
+        }
+        else
+            throw new IllegalArgumentException("Duration must be between 10 and 30 seconds");
     }
 
     public int getRedDuration() {
@@ -54,7 +62,12 @@ public class Traffic_Light {
     }
 
     public void setRedDuration(int redDuration) {
-        this.redDuration = redDuration;
+        if(redDuration>=60){
+            this.redDuration=redDuration;
+        }
+        else
+            throw new IllegalArgumentException("Duration must be 1 minute or more");
+
     }
 
     public String getCurrentState() {

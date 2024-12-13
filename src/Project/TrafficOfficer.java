@@ -1,25 +1,15 @@
 package Project;
 import java.util.List;
 import java.util.ArrayList;
-public class TrafficOfficer {
+public class TrafficOfficer extends Person {
+    private Zone assigned_zone;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public TrafficOfficer(String id,String name,String contactInfo) {
+        super(id,name,contactInfo);
+    }
+    public void setAssigned_zone(Zone assigned_zone) {
+        this.assigned_zone = assigned_zone;
+    }
   
   //traffic officer functions
     public void record_violation(Vehicle V,TrafficViolation violation, String date){

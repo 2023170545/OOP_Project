@@ -14,54 +14,23 @@ package Project;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Owner {
-    private int id;
-    private String name;
-    private String contactInfo;
-    private List<String> vehicles;
+public class Owner extends Person{
+    private ArrayList<Vehicle>vehicles=new ArrayList<>();
 
- 
-    public Owner(int id, String name, String contactInfo) {
-        this.id = id;
-        this.name = name;
-        this.contactInfo = contactInfo;
-        this.vehicles = new ArrayList<>();
+
+    public Owner(String id, String name, String contactInfo) {
+        super(id,name,contactInfo);
     }
 
-   
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getContactInfo() {
-        return contactInfo;
-    }
-
-    public void setContactInfo(String contactInfo) {
-        this.contactInfo = contactInfo;
-    }
-
-    public List<String> getVehicles() {
+    public ArrayList<Vehicle> getVehicles() {
         return vehicles;
     }
 
-  public void addVehicle(String vehicle) {
-        vehicles.add(vehicle);
+    public void setVehicles(ArrayList<Vehicle> vehicles) {
+        this.vehicles = vehicles;
+    }
 
-  }
-    public void removeVehicle(String vehicle) {
+    public void removeVehicle(Vehicle vehicle) {
         vehicles.remove(vehicle);
     }
 }
