@@ -109,28 +109,34 @@ public class TrafficViolation {
         }
         return "THANK YOU";
     }
-
-    public static void dislayVoilationByAdmin() {
-        system.out.print("Enter ID or Zone");
+private static List<TrafficViolation> violations=new ArrayList<>();
+    public static void displayViolationByAdmin() {
+        System.out.print("Enter ID or Zone");
         Scanner scanner = new Scanner(System.in);
         String vehicleIdOrZone = scanner.nextLine();
-        public static List<Object> getViolationsByVehcileOrZone (vehicleIdOrZone) {
-                List < Object > matchingViolations = new ArrayList<>();
-        for (TrafficViolation violation : violations) {
-            if (violation.getVehicleId().equals(vehicleIdOrZone) || violation.getZone().equals(vehicleIdOrZone)) {
-                matchingViolations.add(violation);
+        List<TrafficViolation> results = getViolationsByVehicleOrZone(vehicleIdOrZone);
+        if (results.isEmpty()) {
+            System.out.println("No violations found for the given ID or Zone.");
+        } else {
+            for (TrafficViolation violation : results) {
+                System.out.println("Vehicle ID:" + violation.getViolationId());
+                System.out.println("Zone:" + violation.getZone());
+                System.out.println("Vehicle Type:" + violation.getViolationType());
+                System.out.println("Fine Amount:" + violation.getFineAmount());
+                System.out.println("------------------------------");
             }
         }
-        return matchingViolations;
-        }
-        List<Object> results = getViolationsByVehcileOrZone(vehicleIdOrZone);
-        for (TrafficViolation violation : results) {
-            System.out.println("Vehicle ID":+violation.getViolationId());
-            System.out.println("Zone":+violation.getZone());
-            System.out.println("Vehicle Type":+violation.getViolationType());
-            System.out.println("Fine Amount:":+violation.getFineAmount());
-
-        }
     }
-}
+        public static List<TrafficViolation> getViolationsByVehicleOrZone (String vehicleIdOrZone) {
+            List<TrafficViolation> matchingViolations = new ArrayList<>();
+            for (TrafficViolation violation : violations) {
+                if (violation.getVehicleId().equals(vehicleIdOrZone) || violation.getZone().equals(vehicleIdOrZone)) {
+                    matchingViolations.add(violation);
+                }
+            }
+            return matchingViolations;
+        }
+
+    }
+
 

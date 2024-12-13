@@ -1,7 +1,7 @@
 package Project;
 
 public class Traffic_Light {
-    private int id=0;
+    private  static int id=0;
     private String location;
     private int greenDuration;
     private int yellowDuration;
