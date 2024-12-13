@@ -1,4 +1,4 @@
-package com.mycompany.trafficmanagementsystem;
+package Project;
 
 public class Person {
     private String ID;
@@ -6,7 +6,11 @@ public class Person {
     private String contactInfo;
     private String password;
     
-    public Person(){}
+    public Person(String ID,String name,String contactInfo){
+        this.ID = ID;
+        this.name = name;
+        this.contactInfo = contactInfo;
+    }
     public Person(String ID, String name, String contactInfo, String password) {
         this.ID = ID;
         this.name = name;
