@@ -1,42 +1,13 @@
 package Project;
 import java.util.List;
 import java.util.ArrayList;
-public class TrafficOfficer {
+public class TrafficOfficer extends Person {
+    private Zone assigned_zone;
 
-    private String ID;
-    private String name;
-    private String contact_info;
-    private String assigned_zone;
-
-    public String getID() {
-        return ID;
+    public TrafficOfficer(String id,String name,String contactInfo) {
+        super(id,name,contactInfo);
     }
-
-    public void setID(String ID) {
-        this.ID = ID;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getContact_info() {
-        return contact_info;
-    }
-
-    public void setContact_info(String contact_info) {
-        this.contact_info = contact_info;
-    }
-
-    public String getAssigned_zone() {
-        return assigned_zone;
-    }
-
-    public void setAssigned_zone(String assigned_zone) {
+    public void setAssigned_zone(Zone assigned_zone) {
         this.assigned_zone = assigned_zone;
     }
   
