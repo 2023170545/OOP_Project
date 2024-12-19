@@ -5,6 +5,7 @@ public class Vehicle {
     private VehicleType type;
     private String LicensePlate;
     private String owner;
+
                                                    // Enum to define the type of vehicle
     public enum VehicleType {
         CAR, TRUCK, BIKE

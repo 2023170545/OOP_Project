@@ -15,27 +15,29 @@ public class Main {
             }
         }
     }
-private static void addTrafficLight(Scanner scanner){
-        System.out.print("Enter the location :");
-        String location=scanner.nextLine();
+private static void addTrafficLight(Scanner scanner) {
+    System.out.print("Enter the location :");
+    String location = scanner.nextLine();
     System.out.print("Enter the green duration (in seconds): ");
-    int greenDuration=scanner.nextInt();
+    int greenDuration = scanner.nextInt();
     System.out.print("Enter the yellow duration (in seconds): ");
-    int yellowDuration=scanner.nextInt();
-        System.out.print("Enter the red duration (in seconds): ");
-    int redDuration=scanner.nextInt();
-        id++;
-if(greenDuration<60||(yellowDuration<10&&yellowDuration>30)||redDuration<60||greenDuration+yellowDuration+redDuration>150){
-    System.out.println("Invalid durations .");
-    return;
-}
-TrafficLight trafficLight=new TrafficLight(id,location,greenDuration,yellowDuration,redDuration,"Red");
-trafficLight.add(trafficLight);
-saveTrafficLightsToFile();
+    int yellowDuration = scanner.nextInt();
+    System.out.print("Enter the red duration (in seconds): ");
+    int redDuration = scanner.nextInt();
+    scanner.nextLine();
+    id++;
+    if (greenDuration < 60 || yellowDuration < 10 || yellowDuration > 30 || redDuration < 60 || greenDuration + yellowDuration + redDuration > 150) {
+        System.out.println("Invalid durations .");
+        return;
+    }
+    TrafficLight trafficLight = new TrafficLight(id, location, greenDuration, yellowDuration, redDuration, "Red");
+    trafficLight.add(trafficLight);
+    saveTrafficLightsToFile();
 }
 private static void updateTrafficLight(Scanner scanner) {
     System.out.print("Enter the id of the traffic light to update :");
     int id = scanner.nextInt();
+    scanner.nextLine();
     TrafficLight trafficLight = findTrafficLightById(id);
     if (trafficLight == null) {
         System.out.println("Traffic light not found.");
@@ -69,15 +71,18 @@ private static void deleteTrafficLight(Scanner scanner){
         trafficLights.removeIf(t->t.getId()==id);
     saveTrafficLightsToFile();
 }
-private static void listtTrafficLights() {
+private static void listTrafficLights() {
     for (TrafficLight trafficLight : trafficLights) {
         System.out.println("ID: " + trafficLight.getId());
         System.out.println("Location: " + trafficLight.getLocation());
         System.out.println("Green Duration: " + trafficLight.getGreenDuration());
-        System.out.println("Yellow Duration: " + trafficLight.YellowDuration());
+        System.out.println("Yellow Duration: " + trafficLight.getYellowDuration());
         System.out.println("Red Duration: " + trafficLight.getRedDuration());
         System.out.println("Current state: " + trafficLight.getCurrentState());
     }
 }
+    private static void saveTrafficLightsToFile() {
+        // File saving logic should be implemented here
+    }
 
 }
